@@ -22,11 +22,11 @@ WHERE l.nome = 'Águas do Paiol / Terminal (TCI)';
 --C (não finalizada) Obter o quadro de horário de uma determinada linha, dado seu Nome.
 SELECT l.nome AS Linha, hrdu.hora_saida AS Dias_uteis, hrs.hora_saida AS Sabados, hrd.hora_saida AS Domingo, hrf.hora_saida AS Feriados
 FROM Linha AS l
-LEFT JOIN Quadro_Horario AS qh ON l.cod_quadro = qh.cod_quadro
-LEFT JOIN Horario_Dia_Util AS hrdu ON hrdu.cod_quadro = qh.cod_quadro
-LEFT JOIN Horario_Sabado AS hrs ON hrs.cod_quadro = qh.cod_quadro
-LEFT JOIN Horario_Domingo AS hrd ON hrd.cod_quadro = qh.cod_quadro
-LEFT JOIN Horario_Feriado AS hrf ON hrf.cod_quadro = qh.cod_quadro
+JOIN Quadro_Horario AS qh ON l.cod_quadro = qh.cod_quadro
+JOIN Horario_Dia_Util AS hrdu ON hrdu.cod_quadro = qh.cod_quadro
+JOIN Horario_Sabado AS hrs ON hrs.cod_quadro = qh.cod_quadro
+JOIN Horario_Domingo AS hrd ON hrd.cod_quadro = qh.cod_quadro
+JOIN Horario_Feriado AS hrf ON hrf.cod_quadro = qh.cod_quadro
 WHERE l.nome = 'Águas do Paiol / Terminal (TCI)';
 
 --D Obter as linhas de ônibus/empresa que passam por um determinado logradouro, dado o nome desse logradouro.
